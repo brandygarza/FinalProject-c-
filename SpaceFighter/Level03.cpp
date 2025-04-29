@@ -1,10 +1,9 @@
 
-
-#include "Level02.h"
+#include "Level03.h"
+// for boss ship #include 
 #include "BioEnemyShip.h"
 
-
-void Level02::LoadContent(ResourceManager& resourceManager)
+void Level03::LoadContent(ResourceManager& resourceManager)
 {
 	// Setup enemy ships
 	Texture* pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyShip.png");
@@ -18,7 +17,6 @@ void Level02::LoadContent(ResourceManager& resourceManager)
 		0.3, 0.25, 0.35, 0.2, 0.4,
 		0.7, 0.75, 0.65, 0.8, 0.6,
 		0.5, 0.4, 0.6, 0.45, 0.55, .6
-
 	};
 
 	double delays[COUNT] =
@@ -45,9 +43,5 @@ void Level02::LoadContent(ResourceManager& resourceManager)
 		AddGameObject(pEnemy);
 	}
 
-	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground03.png"));
-
-
 	Level::LoadContent(resourceManager);
 }
-
