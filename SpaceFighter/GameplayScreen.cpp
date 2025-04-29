@@ -2,9 +2,13 @@
 #include "GameplayScreen.h"
 #include "MainMenuScreen.h"
 #include "Level.h"
+<<<<<<< HEAD
 #include "Level01.h"
 #include "Level02.h"
 #include "Level03.h"
+=======
+#include "Level02.h"
+>>>>>>> 20566fe6ef2ea9c9caa7112d2cb8d58f89d11c96
 
 GameplayScreen::GameplayScreen(const int levelIndex)
 	: m_levelIndex(levelIndex)
@@ -29,7 +33,7 @@ void GameplayScreen::LoadLevel(const int levelIndex)
 
 	switch (levelIndex)
 	{
-	case 0: m_pLevel = new Level01(); break;
+	case 0: m_pLevel = new Level02(); break;
 	}
 
 	m_pLevel->SetGameplayScreen(this);
