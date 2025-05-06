@@ -11,38 +11,18 @@ void Level02::LoadContent(ResourceManager& resourceManager)
 
 	const int COUNT = 22;
 
-	double xPositions[COUNT] =
-	{
-		0.25, 0.2, 0.3,
-		0.75, 0.8, 0.7,
-		0.3, 0.25, 0.35, 0.2, 0.4,
-		0.7, 0.75, 0.65, 0.8, 0.6,
-		0.5, 0.4, 0.6, 0.45, 0.55, .6
-	};
-
-	double delays[COUNT] =
-	{
-		0.0, 0.25, 0.25,
-		3.0, 0.25, 0.25,
-		3.25, 0.25, 0.25, 0.25, 0.25,
-		3.25, 0.25, 0.25, 0.25, 0.25,
-		3.5, 0.3, 0.3, 0.3, 0.3, 0.3
-	};
+	double xPosition = 0;
 
 	float delay = 3.0; // start delay
 	Vector2 position;
 
-	for (int i = 0; i < COUNT; i++)
-	{
-		delay += delays[i];
-		position.Set(xPositions[i] * Game::GetScreenWidth(), -pTexture->GetCenter().Y);
+	position.Set(xPosition * Game::GetScreenWidth(), -pTexture->GetCenter().Y);
 
-		BioEnemyBoss* pBoss = new BioEnemyBoss();
-		pBoss->SetTexture(pTexture);
-		pBoss->SetCurrentLevel(this);
-		pBoss->Initialize(position, (float)delay);
-		AddGameObject(pBoss);
-	}
+	BioEnemyBoss* pBoss = new BioEnemyBoss();
+	pBoss->SetTexture(pTexture);
+	pBoss->SetCurrentLevel(this);
+	pBoss->Initialize(position, (float)delay);
+	AddGameObject(pBoss);
 
 	// Setup background
 	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground03.png"));
