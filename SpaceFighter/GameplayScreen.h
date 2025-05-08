@@ -42,6 +42,8 @@ public:
 		@param levelIndex The index of the level to load. */
 	virtual void LoadLevel(const int levelIndex);
 
+	virtual void LoadBossLevel();
+
 
 private:
 

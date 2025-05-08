@@ -4,7 +4,6 @@
 #include "Level.h"
 #include "Level01.h"
 #include "Level02.h"
-#include "Level03.h"
 
 GameplayScreen::GameplayScreen(const int levelIndex)
 	: m_levelIndex(levelIndex)
@@ -29,11 +28,21 @@ void GameplayScreen::LoadLevel(const int levelIndex)
 
 	switch (levelIndex)
 	{
-	case 0: m_pLevel = new Level02(); break;
+	case 0: m_pLevel = new Level01(); break;
+	case 1: m_pLevel = new Level02(); break;//boss level
 	}
+
 
 	m_pLevel->SetGameplayScreen(this);
 	m_pLevel->LoadContent(*m_pResourceManager);
+}
+void GameplayScreen::LoadBossLevel() {
+	m_levelIndex++;
+	const int maxLevels = 2;
+	if (m_levelIndex >= maxLevels) {
+		m_levelIndex = 0;
+	}
+	LoadLevel(m_levelIndex);
 }
 
 void GameplayScreen::HandleInput(const InputState& input)
@@ -44,6 +53,10 @@ void GameplayScreen::HandleInput(const InputState& input)
 void GameplayScreen::Update(const GameTime& gameTime)
 {
 	m_pLevel->Update(gameTime);
+	//need to connect BioEnemyShip count here somehow?? Unsure how to trigger the start of the boss level.
+	if (m_levelIndex == 0) {
+		LoadBossLevel();
+	}
 }
 
 void GameplayScreen::Draw(SpriteBatch& spriteBatch)
