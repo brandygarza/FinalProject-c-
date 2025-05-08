@@ -2,7 +2,9 @@
 #include "GameplayScreen.h"
 #include "MainMenuScreen.h"
 #include "Level.h"
+#include "Level01.h"
 #include "Level02.h"
+#include "Level03.h"
 
 GameplayScreen::GameplayScreen(const int levelIndex)
 	: m_levelIndex(levelIndex)

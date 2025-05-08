@@ -7,11 +7,11 @@
 void Level02::LoadContent(ResourceManager& resourceManager)
 {
 	// Setup enemy ships
-	Texture* pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyBoss.png");
+	Texture *pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyBoss.png");
+	
+	const int COUNT = 1;
 
-	const int COUNT = 22;
-
-	double xPosition = 0;
+	double xPosition = 0.5;
 
 	float delay = 3.0; // start delay
 	Vector2 position;

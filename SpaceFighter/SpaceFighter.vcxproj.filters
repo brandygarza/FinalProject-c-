@@ -101,8 +101,13 @@
     <ClCompile Include="Weapon.cpp">
       <Filter>Source Files\Game Objects\Weapons</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="Level03.cpp">
+      <Filter>Source Files\Levels</Filter>
+=======
     <ClCompile Include="BioEnemyBoss.cpp">
       <Filter>Source Files\Game Objects\Ships</Filter>
+>>>>>>> 20566fe6ef2ea9c9caa7112d2cb8d58f89d11c96
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,8 +165,13 @@
     <ClInclude Include="Explosion.h">
       <Filter>Source Files\Game Objects\Misc</Filter>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="Level03.h">
+      <Filter>Source Files\Levels</Filter>
+=======
     <ClInclude Include="BioEnemyBoss.h">
       <Filter>Source Files\Game Objects\Ships</Filter>
+>>>>>>> 20566fe6ef2ea9c9caa7112d2cb8d58f89d11c96
     </ClInclude>
   </ItemGroup>
 </Project>

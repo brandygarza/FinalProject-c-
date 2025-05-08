@@ -5,7 +5,7 @@
 
 BioEnemyBoss::BioEnemyBoss()
 {
-	SetSpeed(50);
+	SetSpeed(150);
 	SetMaxHitPoints(15);
 	SetCollisionRadius(20);
 }
@@ -16,13 +16,24 @@ void BioEnemyBoss::Update(const GameTime& gameTime)
 	if (IsActive())
 	{
 		float x = sin(gameTime.GetTotalTime() * Math::PI + GetIndex());
+
 		x *= GetSpeed() * gameTime.GetElapsedTime() * 1.4f;
+
 		TranslatePosition(x, GetSpeed() * gameTime.GetElapsedTime());
 
-		if (!IsOnScreen()) Deactivate();
+		if (!IsOnScreen())
+		{
+			std::cout << "I am gone.";
+			Deactivate();
+		}
 	}
 
 	EnemyShip::Update(gameTime);
+}
+
+void BioEnemyBoss::Hit(const float damage)
+{
+	Ship::Hit(damage);
 }
 
 
