@@ -3,6 +3,7 @@
 
 #include "EnemyShip.h"
 
+/** @brief Represents an enemy ship that is biological in nature. */
 class BioEnemyBoss : public EnemyShip
 {
 
@@ -14,7 +15,7 @@ public:
 
 	/** @brief Sets the texture that will be used to render the enemy ship.
 		@param pTexture A pointer to the texture. */
-	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
+	virtual void SetTexture(Texture *pTexture) { m_pTexture = pTexture; }
 
 	/** @brief Updates the enemy ship.
 		@param gameTime A reference to the game time object. */
