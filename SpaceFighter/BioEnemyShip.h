@@ -9,6 +9,8 @@ class BioEnemyShip : public EnemyShip
 
 public:
 
+	Texture* m_pTexture = nullptr;
+
 	/** @brief Creates a new instance of BioEnemyShip. */
 	BioEnemyShip();
 	virtual ~BioEnemyShip() { }
@@ -28,6 +30,6 @@ public:
 
 private:
 
-	Texture *m_pTexture = nullptr;
+	
 
 };

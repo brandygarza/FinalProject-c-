@@ -10,6 +10,9 @@ class Ship : public GameObject, public IAttachable
 
 public:
 
+	float m_maxHitPoints = 3;
+	float m_hitPoints = m_maxHitPoints;
+
 	/** @brief Creates a new instance of Ship. */
 	Ship();
 	virtual ~Ship() { }
@@ -67,6 +70,10 @@ public:
 
 	virtual IAttachment* GetAttachment(const int index);
 
+	/** @brief Gets the current hit points of the ship.
+		@return Returns the current hit points of the ship. */
+	virtual float GetHitPoints() const { return m_hitPoints; }
+
 
 protected:
 
@@ -98,9 +105,6 @@ protected:
 private:
 
 	float m_speed = 300; // pixels per second
-
-	float m_maxHitPoints = 3;
-	float m_hitPoints = m_maxHitPoints;
 
 	bool m_isInvulnurable = false;
 

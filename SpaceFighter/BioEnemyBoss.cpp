@@ -31,6 +31,11 @@ void BioEnemyBoss::Update(const GameTime& gameTime)
 	EnemyShip::Update(gameTime);
 }
 
+void BioEnemyBoss::Hit(const float damage)
+{
+	
+}
+
 void BioEnemyBoss::Draw(SpriteBatch& spriteBatch)
 {
 	if (IsActive())

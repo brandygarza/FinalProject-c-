@@ -25,6 +25,14 @@ public:
 		@param spriteBatch A reference to the game's sprite batch, used for rendering. */
 	virtual void Draw(SpriteBatch& spriteBatch);
 
+	/** @brief Gets the current hit points of the ship.
+		@return Returns the current hit points of the ship. */
+	virtual float GetHitPoints() const { return m_hitPoints; }
+
+	/** @brief Applies damage to the ship.
+		@param damage The amount of damage to apply. */
+	virtual void Hit(const float damage);
+
 private:
 
 	Texture* m_pTexture = nullptr;
