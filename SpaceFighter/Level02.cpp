@@ -6,7 +6,7 @@
 
 void Level02::LoadContent(ResourceManager& resourceManager)
 {
-	// Setup enemy ships
+	// Setup enemy boss
 	Texture *pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyBoss.png");
 	
 	const int COUNT = 1;
@@ -18,7 +18,7 @@ void Level02::LoadContent(ResourceManager& resourceManager)
 
 	position.Set(xPosition * Game::GetScreenWidth(), -pTexture->GetCenter().Y);
 
-	BioEnemyBoss* pBoss = new BioEnemyBoss();
+	BioEnemyBoss *pBoss = new BioEnemyBoss();
 	pBoss->SetTexture(pTexture);
 	pBoss->SetCurrentLevel(this);
 	pBoss->Initialize(position, (float)delay);
