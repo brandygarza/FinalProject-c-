@@ -6,7 +6,7 @@
 BioEnemyBoss::BioEnemyBoss()
 {
 	SetSpeed(90);
-	SetMaxHitPoints(5);
+	SetMaxHitPoints(7);
 	SetCollisionRadius(140);
 }
 
@@ -23,8 +23,7 @@ void BioEnemyBoss::Update(const GameTime& gameTime)
 
 		if (!IsOnScreen())
 		{
-			//std::cout << "I am gone.";
-			//Deactivate();
+			Deactivate();
 		}
 	}
 
@@ -33,7 +32,18 @@ void BioEnemyBoss::Update(const GameTime& gameTime)
 
 void BioEnemyBoss::Hit(const float damage)
 {
-	
+	m_hitPoints -= damage;
+	if (m_hitPoints > 0)
+	{
+		if (m_hitPoints < 10 && m_hitPoints > 4)
+		{
+			
+		}
+		return;
+	}
+
+	GameObject::Deactivate();
+	GetCurrentLevel()->SpawnExplosion(this);
 }
 
 void BioEnemyBoss::Draw(SpriteBatch& spriteBatch)
