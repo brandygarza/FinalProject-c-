@@ -30,3 +30,11 @@ void Level02::LoadContent(ResourceManager& resourceManager)
 	Level::LoadContent(resourceManager);
 }
 
+//void Level02::BossChange1(ResourceManager& resourceManager)
+//{
+//	// Setup enemy boss's second texture
+//	Texture *pTexture = resourceManager.Load<Texture>("Textures\\DamagedBoss.png");
+//
+//	BioEnemyBoss *pBoss = new BioEnemyBoss();
+//}
+

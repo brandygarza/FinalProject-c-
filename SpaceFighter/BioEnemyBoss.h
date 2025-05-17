@@ -29,9 +29,9 @@ public:
 		@return Returns the current hit points of the ship. */
 	virtual float GetHitPoints() const { return m_hitPoints; }
 
-	/** @brief Applies damage to the ship.
+	/** @brief Applies damage to the ship, and changes the texture if needed.
 		@param damage The amount of damage to apply. */
-	virtual void Hit(const float damage);
+	virtual void Hit(const float damage, ResourceManager& resourceManager, SpriteBatch& spriteBatch);
 
 private:
 
